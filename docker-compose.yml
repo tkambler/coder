@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  node:
+    image: tkambler/coder-node:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: node
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - .:/home/coder/project
+  python:
+    image: tkambler/coder-python:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: python
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - .:/home/coder/project
+  go:
+    image: tkambler/coder-go:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: go
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - .:/home/coder/project
