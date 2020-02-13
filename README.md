@@ -1,5 +1,9 @@
 # Web-Based VS Code
 
+This repo contains custom extensions of the [code-server](https://github.com/cdr/code-server) Docker image, allowing you to run VS Code on a remote server.
+
+## Building
+
     make build // Build everything
     make build-node // Build the Node image - tkambler/coder-node:latest
     make build-python // Build the Python image - tkambler/coder-python:latest
