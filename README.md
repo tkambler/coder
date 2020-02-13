@@ -32,4 +32,4 @@ The following VS Code extensions are installed by default:
 
     ## Coder will be available at: http://localhost:8080
     ## A random password is generated and printed to the console on container startup.
-    docker run --rm --name=coder -p "127.0.0.1:8080:8080" tkambler/coder-node:latest
+    docker run --rm --name=coder -p "127.0.0.1:8080:8080" -v $(pwd):/home/coder/project tkambler/coder-node:latest
