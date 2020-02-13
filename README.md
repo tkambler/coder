@@ -10,6 +10,7 @@
 
 - Based on the image - the latest version of Node, Python, Go, etc...
 - [ngrok](https://ngrok.com/) utility
+- [git](https://git-scm.com/)
 
 The following VS Code extensions are installed by default:
 
