@@ -1,4 +1,6 @@
 {
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.fontFamily": "Consolas NF",
   "explorer.openEditors.visible": 0,
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
@@ -22,5 +24,9 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "editor.smoothScrolling": true,
   "editor.cursorSmoothCaretAnimation": true,
-  "workbench.editor.closeOnFileDelete": true
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.colorCustomizations": {
+    "terminalCursor.foreground": "#00ffaa"
+  },
+  "terminal.integrated.cursorBlinking": true
 }

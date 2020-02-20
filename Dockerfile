@@ -1,16 +1,26 @@
 FROM codercom/code-server AS base
 USER root
-RUN apt-get update && apt-get install -y zip unzip wget curl
+RUN apt-get update && apt-get install -y zip unzip wget curl zsh powerline fonts-powerline
 COPY ./code-server/User/settings.json /home/coder/.local/share/code-server/User/settings.json
+COPY ./code-server/User/keybindings.json /home/coder/.local/share/code-server/User/keybindings.json
 COPY ./code-server/extensions /home/coder/.local/share/code-server/extensions
 RUN curl -o /tmp/ngrok-stable-linux-386.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip \
     && cd /tmp \
     && unzip ./ngrok-stable-linux-386.zip \
     && mv ./ngrok /usr/local/bin/ \
     && rm ./ngrok-stable-linux-386.zip
+RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /home/coder/.oh-my-zsh && \
+    cp /home/coder/.oh-my-zsh/templates/zshrc.zsh-template /home/coder/.zshrc && \
+    git clone https://github.com/Powerlevel9k/powerlevel9k.git /home/coder/.oh-my-zsh/custom/themes/powerlevel9k
 RUN mkdir -p /home/coder/.local/bin
-RUN chown -R coder:coder /home/coder/.local
+COPY .zshrc /home/coder/.zshrc
+COPY .tmux.conf /home/coder/.tmux.conf
+COPY .editorconfig /home/coder/.editorconfig
+RUN chown -R coder:coder /home/coder
+RUN chsh -s /bin/zsh
+RUN apt-get install -y tmux
 USER coder
+ENV TERM="xterm-256color"
 
 FROM base AS node
 USER root

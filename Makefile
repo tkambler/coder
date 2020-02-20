@@ -13,10 +13,10 @@ build-go:
 	docker-compose build go
 
 run:
-	docker run -it -p 127.0.0.1:8080:8080 -v "$$PWD:/home/coder/project" coder-tmp:latest
+	docker run -it -p 127.0.0.1:8080:8080 -v "$$PWD:/home/coder/project" --name coder --hostname coder --rm tkambler/coder-node:latest --auth none
 
 run-official:
-	docker run -it -p 127.0.0.1:8080:8080 -v "$$PWD:/home/coder/project" codercom/code-server
+	docker run -it -p 127.0.0.1:8080:8080 -v "$$PWD:/home/coder/project" --name coder --hostname coder --rm codercom/code-server
 
 push:
 	docker-compose push
