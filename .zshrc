@@ -66,7 +66,7 @@ unsetopt BEEP
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -89,16 +89,12 @@ plugins=(
     aws
     docker
     docker-compose
-    git
     jsontools
     npm
     tmux
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# fpath+=($ZSH/plugins/docker)
-# autoload -U compinit && compinit
 
 # User configuration
 
@@ -117,22 +113,26 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 alias src='source ~/.zshrc'
 alias untar='tar -zxvf '
 alias getpass="openssl rand -base64 20"
 alias sha='shasum -a 256 '
 alias tre='tree -I node_modules'
-
-# Don't forget about:
-# - bat
+alias t='task'
+alias m='make'
+alias n='npm'
+alias nr='npm run'
+alias gs='git status'
+alias gc='git commit'
+alias gco='git checkout'
+alias gp='git pull'
+alias gpu='git push'
+alias gm='git merge'
+alias ga='git add'
+alias gaa='git add --all'
+alias gd='git diff'
+alias gb='git branch'
+alias t='task'
+alias m='make'
 
 export EDITOR=vim

@@ -19,6 +19,7 @@ COPY .editorconfig /home/coder/.editorconfig
 RUN chown -R coder:coder /home/coder
 RUN chsh -s /bin/zsh
 RUN apt-get install -y tmux
+RUN cd /tmp && curl --insecure -i -sL https://taskfile.dev/install.sh | sh && mv ./bin/task /usr/local/bin/ && rm -rf ./bin
 USER coder
 ENV TERM="xterm-256color"
 
