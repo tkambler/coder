@@ -13,8 +13,12 @@ This repo contains custom extensions of the [code-server](https://github.com/cdr
 ## What's Included?
 
 - Based on the image - the latest version of Node, Python, Go, etc...
+- [zsh](https://ohmyz.sh/)
+- [Powerlevel9k zsh theme](https://github.com/Powerlevel9k/powerlevel9k) **
 - [ngrok](https://ngrok.com/) utility
 - [git](https://git-scm.com/)
+
+_** - In order for the terminal to render correctly with the Powerlevel9k theme, you'll need to install [this font](fonts)._
 
 The following VS Code extensions are installed by default:
 
