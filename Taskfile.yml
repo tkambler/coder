@@ -1,0 +1,25 @@
+# https://taskfile.dev/
+version: '2'
+
+vars:
+
+tasks:
+
+  default:
+    cmds:
+      - task -l
+
+  docker:build:
+    desc: Build Docker images
+    cmds:
+      - docker-compose build
+
+  docker:push:
+    desc: Push Docker images to registry
+    cmds:
+      - docker-compose push
+
+  run:node:
+    desc: Run Node image with current directory mounted to project folder
+    cmds:
+      - docker run -it -p 127.0.0.1:8080:8080 -v "$$PWD:/home/coder/project" --name coder --hostname coder --rm tkambler/coder-node:latest --auth none
