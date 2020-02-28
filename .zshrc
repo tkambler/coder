@@ -14,8 +14,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     context
     dir
-    # vcs is slow for large repos...
-    # vcs
+    vcs
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     root_indicator

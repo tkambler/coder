@@ -4,14 +4,14 @@ RUN apt-get update && apt-get install -y zip unzip wget curl zsh powerline fonts
 COPY ./code-server/User/settings.json /home/coder/.local/share/code-server/User/settings.json
 COPY ./code-server/User/keybindings.json /home/coder/.local/share/code-server/User/keybindings.json
 COPY ./code-server/extensions /home/coder/.local/share/code-server/extensions
-RUN curl --insecure -i  -o /tmp/ngrok-stable-linux-386.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip \
-    && cd /tmp \
-    && unzip ./ngrok-stable-linux-386.zip \
-    && mv ./ngrok /usr/local/bin/ \
-    && rm ./ngrok-stable-linux-386.zip
+# RUN curl --insecure -i -o /tmp/ngrok-stable-linux-386.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip \
+#     && cd /tmp \
+#     && unzip ./ngrok-stable-linux-386.zip \
+#     && mv ./ngrok /usr/local/bin/ \
+#     && rm ./ngrok-stable-linux-386.zip
 RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /home/coder/.oh-my-zsh && \
     cp /home/coder/.oh-my-zsh/templates/zshrc.zsh-template /home/coder/.zshrc && \
-    git clone https://github.com/romkatv/powerlevel10k#powerlevel9k-compatibility /home/coder/.oh-my-zsh/custom/themes/powerlevel10k
+    git clone https://github.com/romkatv/powerlevel10k /home/coder/.oh-my-zsh/custom/themes/powerlevel10k
 RUN mkdir -p /home/coder/.local/bin
 COPY .zshrc /home/coder/.zshrc
 COPY .tmux.conf /home/coder/.tmux.conf
